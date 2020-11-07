@@ -71,9 +71,9 @@ p {
 }
 
 .container {
-  width: 1200px;
-  padding-left: 40px;
-  padding-right: 40px;
+  width: 1280px;
+  padding-left: 80px;
+  padding-right: 80px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -95,7 +95,8 @@ p {
 }
 
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   padding-left: 51px;
   padding-right: 51px;
   font-weight: 700;
@@ -113,8 +114,28 @@ p {
   color: #ffffff;
   background-color: var(--accent-color);
 }
+.content-wrapper {
+  padding-left: 40px;
+  padding-right: 20px;
+  width: calc(100% / 12 * 5);
+}
+
+.hero .content-wrapper {
+  padding-top: 80px;
+  padding-bottom: 200px;
+  padding-right: 20px;
+}
+
+.vector {
+  height: 15px;
+  width: 10px;
+  vertical-align: middle;
+  fill: currentColor;
+  margin-left: 15px;
+}
 
 .btn-accent {
+  margin-top: 45px;
   color: #ffffff;
   background-color: var(--accent-color);
 }
@@ -138,6 +159,7 @@ p {
 .page-title {
   font-size: 48px;
   line-height: 1.17;
+  margin-bottom: 25px;
 }
 
 .section-title {
@@ -145,9 +167,26 @@ p {
   line-height: 1.56;
 }
 
+.text-center .section-title::after,
+.text-center.section-title::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title::after {
+  display: block;
+  content: '';
+  margin-top: 26px;
+  background: var(--title-color);
+  border-radius: 5px;
+  width: 56px;
+  height: 2px;
+}
+
 .item-title {
   font-size: 24px;
   line-height: 2.33;
+  margin-bottom: 0;
 }
 
 .logo {
@@ -204,6 +243,12 @@ p {
   color: rgb(30, 21, 51);
 }
 
+.hero > .container {
+  background-image: url(../img/hero-img.png);
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
 /* .services {
   background-color: aquamarine;
 } */
@@ -223,17 +268,134 @@ p {
   border-radius: 20px;
 }
 
-.content-wrapper {
-  width: calc(100% / 12 * 5);
+.services-item::before {
+  background-image: url(../img/icons/frame1.svg);
+  content: '';
+  display: block;
+  height: 95px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  margin-bottom: 20px;
 }
+
+.services-item:nth-child(2)::before {
+  background-image: url(../img/icons/frame2.svg);
+}
+.services-item:nth-child(3)::before {
+  background-image: url(../img/icons/frame3.svg);
+}
+.services-item:nth-child(4)::before {
+  background-image: url(../img/icons/frame4.svg);
+}
+.services-item:nth-child(5)::before {
+  background-image: url(../img/icons/frame5.svg);
+}
+.services-item:nth-child(6)::before {
+  background-image: url(../img/icons/frame6.svg);
+}
+
+/* .online-pharmacy::before {
+  background-image: url(../img/icons/frame2.svg);
+}
+.consultation::before {
+  background-image: url(../img/icons/frame3.svg);
+}
+.details-info::before {
+  background-image: url(../img/icons/frame4.svg);
+}
+.emergency-care::before {
+  background-image: url(../img/icons/frame5.svg);
+}
+.tracking::before {
+  background-image: url(../img/icons/frame6.svg);
+} */
 
 .providers {
   margin-left: auto;
 }
 
+.providers .content-wrapper {
+  padding: 150px 0;
+  margin-left: auto;
+}
+
+.providers > .container {
+  background-image: url(../img/healthcare-img.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.app-store > .container {
+  background-image: url(../img/apps-img.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.app-store .content-wrapper {
+  padding: 150px 0;
+}
+
 .providers .btn,
 .app-store .btn {
   margin-top: 40px;
+}
+
+.slider {
+  padding: 64px 118px 89px 122px;
+  background: linear-gradient(208.18deg, #67c3f3 9.05%, #5a98f2 76.74%);
+  border-radius: 24px;
+  color: #fff;
+}
+
+.slider > .title {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.slider > .section-title::after {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 77px;
+  background-color: #fff;
+}
+
+.slider-img {
+  border: 4px solid #fff;
+  border-radius: 50%;
+}
+
+.slider-article {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slider-customer {
+  width: calc((100% - 30px) / 2);
+}
+
+.slider-customer.flexed {
+  display: flex;
+  align-items: center;
+}
+
+.customer-name {
+  margin-left: 29px;
+}
+
+.customer-name-title {
+  margin-bottom: 0;
+
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 2.18;
+}
+
+.customer-name-position {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 2.67;
 }
 
 .articles {
@@ -250,7 +412,7 @@ p {
   flex-basis: calc(100% / 3 - 30px);
 
   overflow: hidden;
-  box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4);
+  box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.75);
   border-radius: 20px;
 }
 
