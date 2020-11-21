@@ -107,6 +107,7 @@ p {
   text-decoration: none;
   border: 1.4px solid var(--accent-color);
   border-radius: 55px;
+  transition: color 800ms linear, background-color 800ms linear;
 }
 
 .btn:hover,
@@ -118,6 +119,12 @@ p {
   padding-left: 40px;
   padding-right: 20px;
   width: calc(100% / 12 * 5);
+}
+
+.hero {
+  background-image: url(../img/decor-dots.svg);
+  background-repeat: no-repeat;
+  background-position: top 40px left -40px;
 }
 
 .hero .content-wrapper {
@@ -235,6 +242,7 @@ p {
 .menu-link {
   font-weight: 400;
   color: rgba(30, 21, 51, 0.5);
+  transition: color 800ms linear, font-weight 800ms linear;
 }
 
 .menu-link:hover,
@@ -254,10 +262,22 @@ p {
 } */
 .service-list {
   display: flex;
+  position: relative;
   flex-wrap: wrap;
   margin-left: -30px;
   margin-top: -30px;
 }
+.service-list::after {
+  position: absolute;
+  content: ' ';
+  display: block;
+  top: 41.5%;
+  right: -50px;
+  width: 131px;
+  height: 115px;
+  background-image: url(../img/decor-dots.svg);
+}
+
 .services-item {
   margin-left: 30px;
   margin-top: 30px;
@@ -266,6 +286,7 @@ p {
   background: #ffffff;
   box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4);
   border-radius: 20px;
+  z-index: 2;
 }
 
 .services-item::before {
@@ -312,6 +333,9 @@ p {
 
 .providers {
   margin-left: auto;
+  background-image: url(../img/decor-dots.svg);
+  background-repeat: no-repeat;
+  background-position: bottom 40px right -40px;
 }
 
 .providers .content-wrapper {
@@ -340,20 +364,47 @@ p {
   margin-top: 40px;
 }
 
-.slider {
+.review {
+  padding-bottom: 80px;
+}
+
+.section-bg {
+  position: relative;
   padding: 64px 118px 89px 122px;
+  margin-bottom: 100px;
   background: linear-gradient(208.18deg, #67c3f3 9.05%, #5a98f2 76.74%);
   border-radius: 24px;
   color: #fff;
 }
+.section-bg::before {
+  position: absolute;
+  content: ' ';
+  display: block;
+  bottom: 40px;
+  left: -50px;
+  width: 131px;
+  height: 115px;
+  background-image: url(../img/decor-dots.svg);
+}
 
-.slider > .title {
+.section-bg::after {
+  position: absolute;
+  content: ' ';
+  display: block;
+  top: -15px;
+  right: -50px;
+  width: 131px;
+  height: 115px;
+  background-image: url(../img/decor-dots-after.svg);
+}
+
+.section-bg > .title {
   color: #fff;
   text-align: center;
   margin-bottom: 0;
 }
 
-.slider > .section-title::after {
+.section-bg > .section-title::after {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 77px;
@@ -365,7 +416,7 @@ p {
   border-radius: 50%;
 }
 
-.slider-article {
+.slider .slider-article {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -378,6 +429,40 @@ p {
 .slider-customer.flexed {
   display: flex;
   align-items: center;
+}
+
+.arrow-next {
+  right: 35%;
+}
+
+.arrow-back {
+  left: 35%;
+}
+
+.arrow-icon {
+  width: 31px;
+  height: 20px;
+  fill: var(--accent-color);
+}
+
+.arrow {
+  border: none;
+  background: transparent;
+  fill: var(--accent-color);
+  opacity: 0.4;
+  position: absolute;
+  bottom: -169px;
+  z-index: 30;
+  transition: opacity 300ms linear;
+}
+
+.arrow:hover,
+.arrow:focus {
+  border: none;
+  background: transparent;
+  fill: var(--accent-color);
+  opacity: 1;
+  outline: none;
 }
 
 .customer-name {
@@ -399,13 +484,27 @@ p {
 }
 
 .articles {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   margin-left: -30px;
   margin-top: -30px;
 }
 
+.articles::before {
+  position: absolute;
+  content: ' ';
+  display: block;
+  top: -20px;
+  left: -20px;
+  width: 131px;
+  height: 115px;
+  background-image: url(../img/decor-dots.svg);
+}
+
 .articles-item {
+  position: relative;
+  z-index: 2;
   margin-left: 30px;
   margin-top: 30px;
 
@@ -441,6 +540,7 @@ p {
   line-height: 1.65;
 
   color: var(--accent-color);
+  transition: font-weight 800ms linear;
 }
 
 .read-more:hover,
@@ -450,7 +550,10 @@ p {
 .footer {
   padding-top: 109px;
   padding-bottom: 109px;
-  background: linear-gradient(183.41deg, #67c3f3 -8.57%, #5a98f2 82.96%);
+  background: url(../img/decor-dots-after.svg),
+    linear-gradient(183.41deg, #67c3f3 -8.57%, #5a98f2 82.96%);
+  background-repeat: no-repeat;
+  background-position: bottom -20px left -20px, center center;
   color: #ffffff;
 }
 .footer .logo {
@@ -478,6 +581,7 @@ p {
   font-weight: 300;
   font-size: 18px;
   line-height: 2.11;
+  transition: font-weight 800ms linear;
 }
 
 .footer-menu-link:hover,
